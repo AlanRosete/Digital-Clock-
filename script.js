@@ -39,3 +39,25 @@ setInterval(() => {
     document.getElementById("minutes").innerHTML = minutes;
     document.getElementById("seconds").innerHTML = seconds;
 }, 1000);
+
+const $sub = document.querySelector("#sub")
+
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '55aef8f261mshe3d9a247429798fp102692jsn6a573c5a8a85',
+		'X-RapidAPI-Host': 'find-any-ip-address-or-domain-location-world-wide.p.rapidapi.com'
+	}
+};
+
+
+
+fetch('https://find-any-ip-address-or-domain-location-world-wide.p.rapidapi.com/iplocation?apikey=873dbe322aea47f89dcf729dcc8f60e8', options)
+	.then(response => response.json())
+	.then(data => mostrarDatos(data))
+	.catch(err => console.error(err)); 
+
+    const mostrarDatos = (data) => {
+        console.log(data)
+       $sub.innerHTML = JSON.stringify(data.countryCapital)
+    }
