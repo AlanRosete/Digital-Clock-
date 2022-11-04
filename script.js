@@ -59,5 +59,5 @@ fetch('https://find-any-ip-address-or-domain-location-world-wide.p.rapidapi.com/
 
     const mostrarDatos = (data) => {
         console.log(data)
-       $sub.innerHTML = JSON.stringify(data.countryCapital)
+       $sub.innerHTML = JSON.stringify(data.countryNativeName)
     }
